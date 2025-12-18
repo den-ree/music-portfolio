@@ -12,10 +12,24 @@ Simply open `index.html` in your browser, or use a local server:
 python -m http.server 8000
 
 # Node.js
-npx http-server
+npx http-server -p 8000
 ```
 
 Then visit `http://localhost:8000`
+
+To stop the server:
+- Press `Ctrl+C` in the terminal where it's running
+- Or if you don't have access to that terminal, find and kill the process:
+  ```bash
+  # Find the process ID (PID) running on port 8000
+  lsof -ti :8000
+  
+  # Kill the process (replace PID with the number from above)
+  kill PID
+  
+  # Or kill it directly in one command
+  kill $(lsof -ti :8000)
+  ```
 
 ## Customization
 
